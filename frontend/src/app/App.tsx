@@ -1,5 +1,11 @@
+import Flashcard from "../components/flashcard";
+
 function App() {
-	return <div>Hello World!</div>;
+	return (
+		<div>
+			<Flashcard />
+		</div>
+	);
 }
 
 export default App;
