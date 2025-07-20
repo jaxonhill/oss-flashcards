@@ -11,7 +11,7 @@ export default function DifficultyButton({
 }: DifficultyButtonProps) {
 	return (
 		<button
-			className="flex flex-col bg-zinc-800 border border-zinc-700 rounded-xl w-full py-8 cursor-pointer hover:bg-zinc-800/80 hover:border-zinc-600 transition-colors"
+			className="flex flex-col bg-zinc-800 gap-2 border border-zinc-700 rounded-xl w-full py-8 cursor-pointer hover:bg-zinc-800/80 hover:border-zinc-600 transition-colors"
 			onClick={onClick}
 		>
 			<span className="text-6xl">{difficulty.emoji}</span>
