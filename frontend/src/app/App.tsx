@@ -1,11 +1,5 @@
-import Flashcard from "../components/flashcard";
+import CardScreen from "../features/card-screen/components/card-screen";
 
-function App() {
-	return (
-		<div>
-			<Flashcard />
-		</div>
-	);
+export default function App() {
+	return <CardScreen />;
 }
-
-export default App;
