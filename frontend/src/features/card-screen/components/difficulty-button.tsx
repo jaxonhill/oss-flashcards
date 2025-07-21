@@ -11,15 +11,15 @@ export default function DifficultyButton({
 }: DifficultyButtonProps) {
 	return (
 		<button
-			className="flex flex-col bg-zinc-800 gap-2 border border-zinc-700 rounded-xl w-full py-8 cursor-pointer hover:bg-zinc-800/80 hover:border-zinc-600 transition-colors"
+			className="flex flex-col items-center justify-center bg-zinc-800 border border-zinc-700 rounded-xl w-full h-32 cursor-pointer hover:bg-zinc-800/80 hover:border-zinc-600 transition-colors"
 			onClick={onClick}
 		>
-			<span className="text-6xl">{difficulty.emoji}</span>
+			<span className="text-4xl">{difficulty.emoji}</span>
 			<div className="flex flex-col items-center">
-				<span className="text-white text-2xl font-medium">
+				<span className="text-white text-lg font-medium">
 					{difficulty.difficultyText}
 				</span>
-				<span className="text-zinc-400 text-lg">
+				<span className="text-zinc-400 text-base mt-[-4px]">
 					{difficulty.lengthText}
 				</span>
 			</div>
