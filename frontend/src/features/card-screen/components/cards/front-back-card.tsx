@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Undo2 } from "lucide-react";
+import { SquarePenIcon, Undo2 } from "lucide-react";
 import DefaultFlashcard from "../default-card";
 import { FlashcardActionButton } from "../flashcard-action-button";
 import type { FrontBackCardData } from "../../types/types";
@@ -17,7 +17,13 @@ export default function FrontBackCard({ flashcard }: FrontBackCardProps) {
 			contentSection={<span>{displayText}</span>}
 			actionButtons={[
 				<FlashcardActionButton
+					icon={<SquarePenIcon className="size-6" />}
+					tooltipText="Edit card"
+					onClick={() => {}}
+				/>,
+				<FlashcardActionButton
 					icon={<Undo2 className="size-6" />}
+					tooltipText="Flip"
 					onClick={() => setIsFlipped(!isFlipped)}
 				/>,
 			]}
