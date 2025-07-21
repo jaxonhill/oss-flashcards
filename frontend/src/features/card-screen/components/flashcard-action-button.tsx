@@ -3,11 +3,13 @@ import { twMerge } from "tailwind-merge";
 interface FlashcardActionButtonProps {
 	icon: React.ReactElement;
 	onClick: () => void;
+	tooltipText: string;
 	className?: string;
 }
 
 export function FlashcardActionButton({
 	icon,
+	tooltipText,
 	onClick,
 	className,
 }: FlashcardActionButtonProps) {
