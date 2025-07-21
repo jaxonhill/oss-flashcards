@@ -1,4 +1,4 @@
-export type Flashcard = {
+export type FrontBackCardData = {
 	front: string;
 	back: string;
 };
