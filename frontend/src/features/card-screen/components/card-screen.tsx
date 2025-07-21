@@ -1,7 +1,7 @@
 import { FLASHCARDS, DIFFICULTIES } from "../config/config";
 import DifficultyButton from "./difficulty-button";
-import FrontBackCard from "./cards/front-back-card";
-import ProgressBar from "./progress-bar";
+import FrontBackCard from "../../flashcards/components/front-back-card";
+import ProgressBar from "../../../components/progress-bar";
 
 export default function CardScreen() {
 	const deckName: string = "College Algebra";
