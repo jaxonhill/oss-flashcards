@@ -1,7 +1,7 @@
-import { FLASHCARDS, DIFFICULTIES } from "../config/config";
+import { DIFFICULTIES } from "../config/config";
 import DifficultyButton from "./difficulty-button";
-import FrontBackCard from "../../flashcards/components/front-back-card";
 import ProgressBar from "../../../components/progress-bar";
+import ClozeCard from "../../cloze-card/components/cloze-card";
 
 export default function CardScreen() {
 	const deckName: string = "College Algebra";
@@ -16,7 +16,7 @@ export default function CardScreen() {
 				totalNumberOfCards={totalCards}
 			/>
 			<div className="flex flex-col gap-3 w-full">
-				<FrontBackCard flashcard={FLASHCARDS[0]} />
+				<ClozeCard revealGroup={2} />
 				<div className="flex gap-3">
 					{DIFFICULTIES.map((difficulty) => {
 						return (
