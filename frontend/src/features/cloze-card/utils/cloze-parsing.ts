@@ -1,4 +1,4 @@
-import type { ClozeNode } from "../types/types";
+import type { ClozeNode, ClozeCardToken } from "../types/types";
 
 // Anki's structure (e.g., {{c1::cloze here}})
 const CLOZE_REGEX: RegExp = /({{c\d+::.*?}})/g;
@@ -7,7 +7,7 @@ const CLOZE_REGEX: RegExp = /({{c\d+::.*?}})/g;
 const CLOZE_SEPARATOR_REGEX: RegExp = /{{c(\d+)::(.*?)}}/;
 
 // prettier-ignore
-export function tokenizeClozeCardText(cardText: string): (ClozeNode | string)[] {
+export function tokenizeClozeCardText(cardText: string): ClozeCardToken[] {
     const tokens: string[] = cardText.split(CLOZE_REGEX);
 
     return tokens.map((token) => {
