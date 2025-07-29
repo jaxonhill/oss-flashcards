@@ -1,18 +1,30 @@
 import { Eye } from "lucide-react";
+import { twMerge } from "tailwind-merge";
 
 interface RevealTextButtonProps {
 	text: string;
 	onClick: () => void;
+	isRevealed: boolean;
 }
 
-export function RevealTextButton({ text, onClick }: RevealTextButtonProps) {
+// prettier-ignore
+export function RevealTextButton({
+	text,
+	onClick,
+	isRevealed,
+}: RevealTextButtonProps) {
 	return (
-		<button
+		<span
 			onClick={onClick}
-			className="bg-zinc-700 select-none rounded px-2 inline-flex justify-center items-center w-fit relative group hover:cursor-pointer hover:bg-zinc-700/80 transition-colors"
+			className={twMerge([
+				"bg-zinc-700 rounded px-2 inline-flex justify-center items-center w-fit",
+				!isRevealed && "select-none relative group hover:cursor-pointer hover:bg-zinc-700/80 transition-colors",
+			])}
 		>
-			<Eye className="size-6 text-zinc-300 absolute group-hover:text-white transition-colors" />
-			<span className="invisible">{text}</span>
-		</button>
+			{!isRevealed && (
+				<Eye className="size-6 text-zinc-300 absolute group-hover:text-white transition-colors" />
+			)}
+			<span className={isRevealed ? "visible" : "invisible"}>{text}</span>
+		</span>
 	);
 }

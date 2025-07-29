@@ -5,12 +5,16 @@ import { CoveredText } from "./covered-text";
 interface ClozeCardContentProps {
 	clozeCardTokens: ClozeCardToken[];
 	revealGroup: number;
+	onClickReveal: () => void;
+	isRevealed: boolean;
 }
 
 // prettier-ignore
 export function ClozeCardContent({
 	clozeCardTokens,
 	revealGroup,
+	onClickReveal,
+	isRevealed,
 }: ClozeCardContentProps) {
 	return (
 		<p>
@@ -20,7 +24,7 @@ export function ClozeCardContent({
 				} else {
 					const isRevealGroup: boolean = revealGroup === token.group;
 					if (isRevealGroup) {
-						return <RevealTextButton text={token.content} onClick={() => {}} />;
+						return <RevealTextButton text={token.content} onClick={onClickReveal} isRevealed={isRevealed} />;
 					} else {
 						return <CoveredText key={i} text={token.content} />;
 					}
